@@ -24791,10 +24791,10 @@ fabric.Image.filters.BaseFilter.fromObject = function(object, callback) {
         }
         if (timeToRender) {
           this._renderChar(method, ctx, lineIndex, i, charsToRender, left, top, lineHeight);
+          left += ctx.measureText(charsToRender).width;
+          boxWidth = 0;
           charsToRender = '';
           actualStyle = nextStyle;
-          left += boxWidth;
-          boxWidth = 0;
         }
       }
       ctx.restore();
